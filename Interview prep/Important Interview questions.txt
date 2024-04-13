@@ -1,0 +1,129 @@
+1. Explain different types of positioning in CSS with proper examples. (Absolute, relative, static, fixed, sticky)
+
+--> static is default positioning(Elements are positioned according to the normal flow of the document) 
+  relative positioned relative to their normal position in the document flow , the offset properties set will be from it's original position
+  absolute - removed from normal di=ocument flow , positioned related to it's closest parent if it's positioned other than static , or follows the viewport if no parent.
+ fixed - The element remains fixed in its position even when the page is scrolled.(used for headers , footers)
+ sticky - element behave like relative until they reach specified scroll , beyond that scroll it becomes fixed.
+
+2. display properties in CSS.?
+-->  1. display: block - 
+	Renders an element as a block-level element.
+     2. display:inline -
+	Renders an element as an inline-level element.			
+      3. display: inline-block;
+	behaves like inline(height , width , margin ,padding are respected ) unlike inline elements
+     
+
+Javascript Interview 
+
+1.Talk about different datatypes in Javascript.
+-->	Primitive : Number( Represents both integers and floating-point numbers) , String ( Represents sequences of characters), Boolean( Represents true or false values)
+	,Undefined( Represents a variable that has been declared but not assigned a value), Null(Represents the intentional absence of any object value), Symbol( Represents unique identifiers), BigInt( Represents integers with arbitrary precision)
+
+	Non-primitive(composite) : Object( Represents a collection of key-value pairs) , Array( Represents a collection of elements, indexed by integers), Function( Represents a reusable block of code)
+
+2. Explain and code map, filter, and reduce functions in javascript.
+
+refer array concepts
+
+3.Difference between == and === in javascript.
+-->	== : return true after type coercion(does not check datatype
+	=== : strict checking , true only when value as well as type of data matches
+
+4.Different types of inheritance with examples in javascript.
+
+
+
+
+
+
+
+5.What is Virtual DOM? Why is React fast?
+
+
+
+
+
+6.What is event bubbling?
+
+--> This means that when an event occurs on an inner element, such as a button inside a div, the event is first handled by the innermost element and then propagated up to its parent elements in succession, all the way up to the document root.
+Event bubbling allows for event delegation, where a single event handler can be attached to a common ancestor element to handle events for multiple child elements efficiently. It simplifies event handling by reducing the number of event listeners needed and improves performance by avoiding the need to attach event handlers to every individual element.
+
+
+7.Promises Vs async await in Javascript.
+
+
+
+
+
+8.Explain and code examples of closures in javascript.
+
+--> A closure in JavaScript is a function bundled together with its lexical environment, which consists of the variables and parameters that were in scope when the closure was created. This allows the function to retain access to those variables even after the outer function has finished executing.
+function createCounter() {
+  let count = 0;
+
+  return function increment() {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = createCounter();
+counter(); // Output: 1
+counter(); // Output: 2
+
+9.Difference between var, const, and let
+
+
+
+10.What is hoisting in javascript?
+
+--> where variable and function declarations are moved to the top of their containing scope during the compilation phase, regardless of where they are declared within that scope.
+ variable
+console.log(x); // Output: undefined
+var x = 10;
+
+Function
+hoisted(); // Output: "Function is hoisted"
+
+function hoisted() {
+  console.log("Function is hoisted");
+}
+
+it's important to note that only function declarations are hoisted, not function expressions or arrow functions. Variable declarations using let and const are also hoisted, but they are not initialized with undefined like variables declared with var
+
+
+11. Currying in Javascript
+
+
+
+
+DSA 
+Given an array of strings, find the longest common prefix among all of them. This was an implementation-based question. 
+
+function longestCommonPrefix(strs) {
+    if (strs.length === 0) return "";
+
+    let prefix = strs[0];
+    for (let i = 1; i < strs.length; i++) {
+        while (strs[i].indexOf(prefix) !== 0) {
+            prefix = prefix.slice(0, prefix.length - 1);
+            if (prefix === "") return "";
+        }
+    }
+    return prefix;
+}
+
+// Example usage:
+const strings = ["flower", "flow", "flight"];
+console.log(longestCommonPrefix(strings)); // Output: "fl"
+
+
+SQl and other
+
+-- SQL vs NoSQL databases
+-- What are transactions in databases?
+-- Explain ACID properties.
+-- Explain pagination and how to implement it.
+-- CI/CD pipeline and deployment cycle

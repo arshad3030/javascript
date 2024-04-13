@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <button class="btn">submit</button>
+      <p class="btn">hello</p>
+      <button class="btn2">click 2</button>
+      <p>Heloo2!!</p>
+    </div>
+    <script>
+      // 1.get element by id
+      //   let btn = document.getElementById("div1");
+      //   console.log(btn);
+
+      // 2. get element by class
+      //   let x = document.getElementsByClassName("btn");
+      //   console.log(x);
+      //   console.log(x[0]);
+      //   console.log(x[1]);
+
+      // 3. get elements by tag name
+      //   let y = document.getElementsByTagName("p");
+      //   console.log(y);
+      //   console.log(y[0]);
+      //   console.log(y[1]);
+
+      // 4. using query selector
+      let z = document.querySelector("p.btn");
+      //   let z1 = document.querySelectorAll("p");
+      //   console.log(z);
+      //   console.log(z1);
+      //   console.log(z1[0]);
+      //   console.log(z[1]);
+
+      //changing the structure inside p tag to span element
+      //   z.innerHTML = `<span>hi</span>`;
+
+      // to change styling of element(color,font....)
+      z.style.color = "red";
+    </script>
+  </body>
+</html>

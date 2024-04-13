@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p id="para">Hello</p>
+      <button id="btn">click</button>
+    </div>
+
+    <script>
+      let buttonElement = document.getElementById("btn");
+
+      //using click mouse event , to check if our click event is working
+      //Now we want to change the text of para on click of button
+      // we can also do getelementbyid , but this is another way :)
+
+      //   let paragraph = document.querySelector("p#para");
+      //   buttonElement.addEventListener("click", () => {
+      //     paragraph.innerText = "It's changed to me :)";
+      //     paragraph.style.color = "red";
+      //     console.log("button is clicked");
+      //   });
+
+      // 2. mouseover --> hovering mouse on thate element
+      //   paragraph.addEventListener(
+      //     "mouseover",
+      //     () => (paragraph.innerText = "hovering mouse over me, stop it!!!!")
+      //   );
+
+      // Keyboard events
+      //keydown
+      //   document.addEventListener("keydown", (e) => {
+      //     console.log(e.key);
+      //     console.log(e.code);
+      //   });
+
+      //   2.keyup
+
+      //   document.addEventListener("keyup", (e) => {
+      //     console.log(e.key);
+      //     console.log(e.code);
+      //   });
+
+      //   3. key press --> it doesn't track non -printable characters like (shift , tab , etc...)
+
+      document.addEventListener("keypress", (e) => {
+        console.log(e.key);
+        console.log(e.code);
+      });
+    </script>
+
+    <!-- <script type="text/javascript" src="dom.js"></script> -->
+  </body>
+</html>

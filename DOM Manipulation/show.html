@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="show.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="head">
+      <div id="grandparent">
+        <div id="Parent">
+          <div id="child"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // It happens both ways first trickling then bubble
+      //But by default it will be bubble phase ,going up hence child first then parent
+
+      //   let parent = document.getElementById("Parent");
+      //   let child = document.getElementById("child");
+      //   parent.addEventListener("click", () => console.log("Parent is clicked"));
+      //   child.addEventListener("click", () => console.log("child is clicked"));
+
+      // now if we want to change the phase to trickling , down
+      // we have third argument , iscapture which is false by default(bubble) we can make it true
+      //   let parent = document.getElementById("Parent");
+      //   let child = document.getElementById("child");
+      //   parent.addEventListener(
+      //     "click",
+      //     () => console.log("Parent is clicked"),
+      //     true
+      //   );
+      //   child.addEventListener(
+      //     "click",
+      //     () => console.log("child is clicked"),
+      //     true
+      //   );
+
+      // By default both happens first trickling then bubbling
+
+      let grandparent = document.getElementById("grandparent");
+      let parent = document.getElementById("Parent");
+      let child = document.getElementById("child");
+      let head = document.getElementById("head");
+      head.addEventListener(
+        "click",
+        () => console.log("head is clicked"),
+        true
+      );
+
+      grandparent.addEventListener(
+        "click",
+        () => console.log("grandparent is clicked"),
+        false
+      );
+
+      // Here we have made parent as trickling , since iscapture is true
+      parent.addEventListener(
+        "click",
+        () => console.log("parent is clicked"),
+        true
+      );
+      //   Now if we click on child , first trickling comes and then bubbling ,
+      //   since the above parent element is trickle it will come first but nor gp because it is bubble
+      // so first parent , then child , then grandparent(bubble is activated)
+      child.addEventListener(
+        "click",
+        () => console.log("child is clicked"),
+        false
+      );
+    </script>
+  </body>
+</html>
